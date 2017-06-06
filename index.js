@@ -4,7 +4,6 @@ var AWS = require('aws-sdk');
 process.env['PATH'] = process.env['PATH'] + ':' + process.env['LAMBDA_TASK_ROOT'];
 
 var options = { format: 'Letter', phantomPath: './phantomjs_lambda/phantomjs_linux-x86_64' };
-var S3config = { bucketName: 'your-bucket' }; //Change to your bucket name
 
 exports.handler = function(event, context) {
   //Get the values from the request
@@ -32,6 +31,8 @@ exports.handler = function(event, context) {
                 var error = new Error("There was an error while saving the PDF to S3");
                 callback(error);
             } else {
+                console.log('Created PDF with data:');
+                console.log(data);
                 context.done(null, { result: 'Created PDF file' });
             }
         });
