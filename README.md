@@ -20,5 +20,6 @@ This repo was built from different sources and these links could help you.
 
 ## Future features
 Feel free to fork this repo and contribute
+* Return CORS headers for Amazon API Gateway
 * Convert AWS S3 HTML files to PDF
 * Convert any given URL to PDF
